@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to the Underworld</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="video-bg">
+    <iframe src="https://www.youtube.com/embed/LYJGcVtGLHM?autoplay=1&mute=1&controls=0&loop=1&playlist=LYJGcVtGLHM"
+            frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="logo">
+    <img src="assets/reaper_logo.png" alt="Underworld RP" />
+    <div class="player-count" id="playerCount">Players Online: ...</div>
+<div class="restart-countdown" id="restartCountdown">Next Restart In: --:--:--</div>
+  </div>
+  <div class="socials">
+    <a href="#" class="social-btn">Discord</a>
+    <a href="#" class="social-btn">TikTok</a>
+    <a href="#" class="social-btn">YouTube</a>
+  </div>
+
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.data.type === 'playerCount') {
+        document.getElementById('playerCount').textContent = 'Players Online: ' + event.data.count;
+      }
+    });
+  
+
+window.addEventListener('message', function(event) {
+  if (event.data.type === 'playerCount') {
+    document.getElementById('playerCount').textContent = 'Players Online: ' + event.data.count;
+  }
+  if (event.data.type === 'restartCountdown') {
+    const hrs = String(event.data.hrs).padStart(2, '0');
+    const mins = String(event.data.mins).padStart(2, '0');
+    const secs = String(event.data.secs).padStart(2, '0');
+    document.getElementById('restartCountdown').textContent = `Next Restart In: ${hrs}:${mins}:${secs}`;
+  }
+});
+
+</script>
+</body>
+</html>

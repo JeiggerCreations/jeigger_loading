@@ -1,0 +1,61 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.video-bg iframe {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.logo {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.logo img {
+  width: 300px;
+  max-width: 80vw;
+}
+
+.socials {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.social-btn {
+  padding: 10px 20px;
+  background: orange;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.player-count {
+  margin-top: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: orange;
+}
+
+.restart-countdown {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #ff8800;
+}
